@@ -1,0 +1,19 @@
+createLibrary:
+    path:       /create
+    controller: App\Library\Adapter\createLibraryController
+    methods:    POST
+
+getLibrary:
+    path:       /{uuid}
+    controller: App\Library\Adapter\getLibraryController
+    methods:    GET
+
+deleteLibrary:
+    path:       /{uuid}
+    controller: App\Library\Adapter\deleteLibraryController
+    methods:    DELETE
+updateLibrary:
+    path:       /update
+    controller: App\Library\Adapter\updateLibraryController
+    methods:    PATCH
+    

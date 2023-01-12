@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity repository-class="App\Movie\Domain\Repository" name="App\Movie\Domain\Model\Movie" table="Movie">
+    
+    <id name="id" type="string" column="id" column-definition="CHAR(36)"></id>
+
+    <field name="name" type="string" column="name" length="255" nullable="true"/>
+    <field name="year" type="integer" column="year" length="255"  nullable="true"/>
+    <field name="URL" type="string" column="url" length="255"  nullable="true"/>
+    <field name="libraryId" type="string" column="library_id" column-definition="CHAR(36)"></field>
+    
+
+    <indexes>
+      <index name="INDEX_ID" columns="id"/>
+    </indexes>
+  
+  </entity>
+  
+</doctrine-mapping>

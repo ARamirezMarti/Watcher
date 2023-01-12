@@ -1,0 +1,4 @@
+createMovies:
+    path:       /create
+    controller: App\Movie\Adapter\createMovieController
+    methods:    POST
