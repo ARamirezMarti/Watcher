@@ -1,0 +1,14 @@
+services:
+    _defaults:
+      autowire: true
+      autoconfigure: true            
+    
+    App\Library\Adapter\:
+        resource: '../../src/Library/Adapter'
+        tags: [ 'controller.service_arguments' ]
+
+    App\Library\Application\:
+        resource: '../../src/Library/Application/'
+
+    App\Library\Domain\:
+        resource: '../../src/Library/Domain/'
