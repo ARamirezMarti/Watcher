@@ -15,12 +15,10 @@ services:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
-        
-   
     App\Movie\Adapter\:
         resource: '../src/Movie/Adapter/'
         tags: [ 'controller.service_arguments' ]
 
-        
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+    App\Shared\Infrastructure\Listener\JsonTransformerExceptionListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception }
