@@ -4,10 +4,11 @@
     
     <id name="id" type="string" column="id" column-definition="CHAR(36)"></id>
 
-    <field name="name" type="string" column="name" length="255" nullable="true"/>
-    <field name="year" type="integer" column="year" length="255"  nullable="true"/>
-    <field name="URL" type="string" column="url" length="255"  nullable="true"/>
-    <field name="libraryId" type="string" column="library_id" column-definition="CHAR(36)"></field>
+    <embedded name="name" class="App\Movie\Domain\Model\MovieName" use-column-prefix="false" />
+    <embedded name="url" class="App\Movie\Domain\Model\MovieUrl" use-column-prefix="false" />
+    <embedded name="year" class="App\Movie\Domain\Model\MovieYear" use-column-prefix="false" />
+    
+    <field name="LibraryId" type="string" column="library_id" column-definition="CHAR(36)"></field>
     
 
     <indexes>

@@ -2,29 +2,38 @@
 
 namespace App\Movie\Domain\Model;
 
+
 use App\Movie\Application\createMovie\DTO\createMovieDTO;
+use App\Movie\Domain\Model\MovieName;
+use App\Movie\Domain\Model\MovieYear;
+use App\Movie\Domain\Model\MovieUrl;
+use Ramsey\Uuid\Uuid;
 
 class Movie
 {
-    public const BASE_URL = '/watch/';
 
-    private function __construct(public string $id, public string $name, public int $year, public string $URL, public string $libraryId)
+    private string $id;
+    private MovieName $MovieName;
+    private MovieYear $MovieYear;
+    private MovieUrl $MovieUrl;
+    private string $LibraryId;
+
+    private function __construct(public MovieName $name, public MovieYear $year, public MovieUrl $url, string $LibraryId)
     {
-        $this->check_Name($name);
-        $this->modify_Url($URL);
+        $this->id = Uuid::uuid4()->toString();
+        $this->MovieName = $name;
+        $this->MovieYear = $year;
+        $this->MovieUrl = $url;
+        $this->LibraryId = $LibraryId;    
+
     }
 
     public static function create(createMovieDTO $movieDTO): self
     {
-        return new static ($movieDTO->getId(),$movieDTO->getName(),$movieDTO->getYear(),$movieDTO->getURL(),$movieDTO->getLibraryId());
+        return new static ($movieDTO->getName(),$movieDTO->getYear(),$movieDTO->getURL(),$movieDTO->getLibraryId());
     }
 
-    public function check_Name(string $name)
-    {
-    }
+ 
 
-    public function modify_Url($url)
-    {
-        $this->URL = self::BASE_URL.$url;
-    }
+   
 }
