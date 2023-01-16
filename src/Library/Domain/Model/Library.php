@@ -14,7 +14,7 @@ class Library
     private LibraryName $name;
     private LibraryDescription $description;
 
-    public function __construct(LibraryName $libraryName, LibraryDescription $libraryDescription)
+    private function __construct(LibraryName $libraryName, LibraryDescription $libraryDescription)
     {
         $this->id = Uuid::uuid4()->toString();
         $this->name = $libraryName;

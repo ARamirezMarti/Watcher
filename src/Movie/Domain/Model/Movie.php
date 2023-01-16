@@ -6,9 +6,9 @@ use App\Movie\Application\createMovie\DTO\createMovieDTO;
 
 class Movie
 {
-    public const base_url = '/watch/';
+    public const BASE_URL = '/watch/';
 
-    public function __construct(public string $id, public string $name, public int $year, public string $URL, public string $libraryId)
+    private function __construct(public string $id, public string $name, public int $year, public string $URL, public string $libraryId)
     {
         $this->check_Name($name);
         $this->modify_Url($URL);
@@ -25,6 +25,6 @@ class Movie
 
     public function modify_Url($url)
     {
-        $this->URL = self::base_url.$url;
+        $this->URL = self::BASE_URL.$url;
     }
 }
