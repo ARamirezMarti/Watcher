@@ -3,9 +3,10 @@
 namespace App\Library\Adapter;
 
 use App\Library\Application\DeleteLibrary\deleteLibraryService;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-class deleteLibraryController
+class deleteLibraryController extends AbstractController
 {
     private $deleteLibraryService;
 

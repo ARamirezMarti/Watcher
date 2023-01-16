@@ -5,10 +5,11 @@ namespace App\Library\Adapter;
 use App\Library\Application\CreateLibrary\createLibraryService;
 use App\Library\Application\CreateLibrary\DTO\createLibraryInputDTO;
 use App\Library\Application\CreateLibrary\DTO\createLibraryOutputDTO;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
-class createLibraryController
+class createLibraryController extends AbstractController
 {
     public function __invoke(Request $request, createLibraryService $createLibraryService)
     {
