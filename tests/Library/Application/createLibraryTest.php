@@ -6,7 +6,6 @@ use App\Library\Application\CreateLibrary\createLibraryService;
 use App\Library\Application\CreateLibrary\DTO\createLibraryInputDTO;
 use App\Library\Domain\Exceptions\InvalidArgumentDomainException;
 use App\Library\Domain\Repository\LibraryRepository;
-use App\Library\Domain\EventDispatcher\DomainEventDispatcher;
 use App\Shared\Domain\Bus\Event\IEventBus;
 use PHPUnit\Framework\TestCase;
 use Test\Library\Domain\LibraryMother;
@@ -26,8 +25,6 @@ class createLibraryTest extends TestCase
     public function testItShouldCreateALibrary()
     {
         $createLibraryService = new createLibraryService($this->repository_mock, $this->eventDispatcher_mock);
-
-        
 
         $this->repository_mock
             ->expects($this->once())

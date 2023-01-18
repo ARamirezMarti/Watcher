@@ -18,12 +18,17 @@
     </php>
 
     <testsuites>
-      <!--   <testsuite name="Project Test Suite">
-            <directory>tests</directory>
+        <testsuite name="Library Aceptacion">
+            <directory>tests/Library/Adapter</directory>
         </testsuite>
- -->
+ 
         <testsuite name="Library Unit">
             <directory>tests/Library/Application</directory>
+        </testsuite>
+
+
+        <testsuite name="Movie Unit">
+            <directory>tests/Movie/Application</directory>
         </testsuite>
        
     </testsuites>
