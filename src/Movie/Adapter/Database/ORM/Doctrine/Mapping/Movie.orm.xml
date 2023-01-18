@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity repository-class="App\Movie\Domain\Repository" name="App\Movie\Domain\Model\Movie" table="Movie">
+  <entity repository-class="App\Movie\Domain\Repository" name="App\Movie\Domain\Model\Movie" table="movie">
     
     <id name="id" type="string" column="id" column-definition="CHAR(36)"></id>
 
-    <embedded name="name" class="App\Movie\Domain\Model\MovieName" use-column-prefix="false" />
-    <embedded name="url" class="App\Movie\Domain\Model\MovieUrl" use-column-prefix="false" />
-    <embedded name="year" class="App\Movie\Domain\Model\MovieYear" use-column-prefix="false" />
+    <embedded name="MovieName" class="App\Movie\Domain\Model\MovieName" use-column-prefix="false" />
+    <embedded name="MovieUrl" class="App\Movie\Domain\Model\MovieUrl" use-column-prefix="false" />
+    <embedded name="MovieYear" class="App\Movie\Domain\Model\MovieYear" use-column-prefix="false" />
     
     <field name="LibraryId" type="string" column="library_id" column-definition="CHAR(36)"></field>
     
