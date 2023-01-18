@@ -1,0 +1,14 @@
+services:
+    _defaults:
+      autowire: true
+      autoconfigure: true            
+    
+    App\Movie\Adapter\:
+        resource: '../../src/Movie/Adapter'
+        tags: [ 'controller.service_arguments' ]
+
+    App\Movie\Application\:
+        resource: '../../src/Movie/Application/'
+
+    App\Movie\Domain\:
+        resource: '../../src/Movie/Domain/'
