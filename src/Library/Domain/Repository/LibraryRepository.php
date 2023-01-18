@@ -37,7 +37,7 @@ class LibraryRepository extends DoctrineLibraryRepository
     {
         $Library = $this->find($uuid);
         if (null === $Library) {
-            throw InvalidArgumentDomainException::createFromMessage('User does not exists.');
+            throw InvalidArgumentDomainException::createFromMessage('Library does not exists.');
         }
 
         return $Library;

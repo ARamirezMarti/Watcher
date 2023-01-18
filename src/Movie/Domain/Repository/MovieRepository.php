@@ -30,7 +30,7 @@ class MovieRepository extends DoctrineMovieRepository
             $this->getEntityManager()->remove($entity);
             $this->getEntityManager()->flush();
         } catch (\Throwable $th) {
-            throw InvalidArgumentDomainException::createFromMessage('Can not delete user');
+            throw InvalidArgumentDomainException::createFromMessage('Can not delete movie');
         }
     }
 
@@ -38,7 +38,7 @@ class MovieRepository extends DoctrineMovieRepository
     {
         $Movie = $this->find($uuid);
         if (is_null($Movie)) {
-            throw InvalidArgumentDomainException::createFromMessage('Can not get  user');
+            throw InvalidArgumentDomainException::createFromMessage('Can not get  movie');
         }
 
         return $Movie;
