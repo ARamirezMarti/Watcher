@@ -3,7 +3,6 @@
 namespace App\Movie\Domain\Model;
 
 
-use App\Movie\Application\createMovie\DTO\createMovieDTO;
 use App\Movie\Domain\Model\MovieName;
 use App\Movie\Domain\Model\MovieYear;
 use App\Movie\Domain\Model\MovieUrl;
@@ -18,19 +17,19 @@ class Movie
     private MovieUrl $MovieUrl;
     private string $LibraryId;
 
-    private function __construct(public MovieName $name, public MovieYear $year, public MovieUrl $url, string $LibraryId)
+    private function __construct(MovieName $name,  MovieYear $year, MovieUrl $movieUrl, string $LibraryId)
     {
         $this->id = Uuid::uuid4()->toString();
         $this->MovieName = $name;
         $this->MovieYear = $year;
-        $this->MovieUrl = $url;
+        $this->MovieUrl = $movieUrl;
         $this->LibraryId = $LibraryId;    
 
     }
 
-    public static function create(createMovieDTO $movieDTO): self
+    public static function create(MovieName $movieName,MovieYear $movieYear,MovieUrl $movieUrl, string $LibraryId): self
     {
-        return new static ($movieDTO->getName(),$movieDTO->getYear(),$movieDTO->getURL(),$movieDTO->getLibraryId());
+        return new static ($movieName,$movieYear,$movieUrl,$LibraryId);
     }
 
  

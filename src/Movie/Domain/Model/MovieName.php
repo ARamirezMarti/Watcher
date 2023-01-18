@@ -8,6 +8,7 @@ class MovieName
 {
 
     private  string $name;
+
     public function __construct($name)
     {
         $this->checkIfNull($name);
@@ -17,7 +18,7 @@ class MovieName
 
     public function checkLenght(string $name)
     {
-        $len = strlen($name);
+        strlen($name);
         if (strlen($name) <= 2 || strlen($name) > 100) {
             throw InvalidArgumentDomainException::createFromMessage(sprintf('Name argument has to be between %s and %s', 2, 10));
         }
@@ -32,6 +33,6 @@ class MovieName
 
     public function Value(): string
     {
-        return $this->Name;
+        return $this->name;
     }
 }

@@ -9,7 +9,8 @@ class MovieUrl
     private $url;
 
     public function __construct(string $Url ) {
-        $this->url = self::BASE_URL . $Url;
+        $correctUrl = str_replace(" ", "-", $Url);
+        $this->url = self::BASE_URL . $correctUrl;
     }
     
 
