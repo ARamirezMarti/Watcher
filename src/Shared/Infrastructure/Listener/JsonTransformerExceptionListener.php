@@ -21,19 +21,19 @@ class JsonTransformerExceptionListener
         ];
         
         if ($e instanceof ResourceNotFoundException) {
-            $data['code'] = Response::HTTP_NOT_FOUND;
+            $JsonResponse['code'] = Response::HTTP_NOT_FOUND;
         }
 
         if ($e instanceof InvalidArgumentException) {
-            $data['code'] = Response::HTTP_BAD_REQUEST;
+            $JsonResponse['code'] = Response::HTTP_BAD_REQUEST;
         }
 
         if ($e instanceof AccessDeniedException) {
-            $data['code'] = Response::HTTP_FORBIDDEN;
+            $JsonResponse['code'] = Response::HTTP_FORBIDDEN;
         }
 
         if ($e instanceof InvalidArgumentDomainException) {
-            $data['code'] = Response::HTTP_CONFLICT;
+            $JsonResponse['code'] = Response::HTTP_CONFLICT;
         }
         $response = new JsonResponse($JsonResponse, $JsonResponse['code']);
 
