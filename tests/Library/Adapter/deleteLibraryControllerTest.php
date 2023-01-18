@@ -1,6 +1,5 @@
 <?php
 
-use App\Library\Domain\Model\Library;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Test\Library\Adapter\LibraryControllerTestBase;
@@ -22,7 +21,7 @@ class deleteLibraryControllerTest extends LibraryControllerTestBase
         $ResponseCreate = self::$client->getResponse();
         $ResponseCreateData = json_decode($ResponseCreate->getContent(), true);
 
-        $esta = isset( $ResponseCreateData['id' ]);
+        $esta = isset($ResponseCreateData['id']);
         $LibraryId = $ResponseCreateData['id'];
 
         self::$client->request(Request::METHOD_DELETE, self::GET_URL.$LibraryId);

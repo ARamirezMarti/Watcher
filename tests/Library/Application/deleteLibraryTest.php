@@ -4,7 +4,6 @@ namespace Library\Application;
 
 use App\Library\Application\CreateLibrary\createLibraryService;
 use App\Library\Application\DeleteLibrary\deleteLibraryService;
-use App\Library\Domain\EventDispatcher\DomainEventDispatcher;
 use App\Library\Domain\Repository\LibraryRepository;
 use App\Shared\Domain\Bus\Event\IEventBus;
 use PHPUnit\Framework\TestCase;

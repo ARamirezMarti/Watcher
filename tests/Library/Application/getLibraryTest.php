@@ -7,7 +7,6 @@ use App\Library\Application\getLibrary\DTO\getLibraryOutputDTO;
 use App\Library\Application\getLibrary\getLibraryService;
 use App\Library\Domain\Exceptions\InvalidArgumentDomainException;
 use App\Library\Domain\Repository\LibraryRepository;
-use App\Library\Domain\EventDispatcher\DomainEventDispatcher;
 use App\Shared\Domain\Bus\Event\IEventBus;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
@@ -31,8 +30,7 @@ class getLibraryTest extends TestCase
         // Arrange
         $createLibraryService = new createLibraryService($this->repository_mock, $this->eventDispatcher_mock);
 
-
-        //Act
+        // Act
         $this->repository_mock
             ->expects($this->once())
             ->method('save');

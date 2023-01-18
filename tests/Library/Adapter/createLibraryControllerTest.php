@@ -16,13 +16,11 @@ class createLibraryControllerTest extends LibraryControllerTestBase
             'description' => 'Fake description test',
         ];
 
-
         self::$client->request(Request::METHOD_POST, self::CREATE_URL, [], [], [], json_encode($payload));
         $ResponseCreate = self::$client->getResponse();
-        $ResponseCreateData = json_decode($ResponseCreate->getContent(), true,512,0);
+        $ResponseCreateData = json_decode($ResponseCreate->getContent(), true, 512, 0);
 
-
-        self::$client->request(Request::METHOD_GET,self::GET_URL.$ResponseCreateData['id']);
+        self::$client->request(Request::METHOD_GET, self::GET_URL.$ResponseCreateData['id']);
         $ResponseGet = self::$client->getResponse();
         $ResponseGetData = json_decode($ResponseGet->getContent(), true);
 
