@@ -22,9 +22,11 @@ class createMovieController
         
         $MovieDTO = createMovieDTO::create($data);
         
-        $this->createMovieService->__invoke($MovieDTO);
+        $Movie = $this->createMovieService->__invoke($MovieDTO);
 
-        return new JsonResponse([], Response::HTTP_CREATED);
+        return new JsonResponse([
+            "Id"=>$Movie->Id(),
+        ], Response::HTTP_CREATED);
 
     }
 }

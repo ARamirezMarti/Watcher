@@ -6,7 +6,7 @@ namespace App\Movie\Application\createMovie\DTO;
 class createMovieDTO
 {
 
-    public function __construct(public readonly string|null $name, public readonly  int | null $year,  public readonly string $LibraryId)
+    public function __construct(public readonly string|null $name, public readonly  int | null $year,  public readonly string|null $LibraryId)
     {
      
     }
@@ -16,7 +16,7 @@ class createMovieDTO
     {
         $name = $data['name'] ?? null;
         $year = $data['year'] ?? null;
-        $LibraryId = $data['LibraryId'] ;
+        $LibraryId = $data['LibraryId'] ?? null;
 
         return new self($name, $year, $LibraryId);
     }

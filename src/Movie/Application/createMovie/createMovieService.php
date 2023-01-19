@@ -15,9 +15,11 @@ class createMovieService
     {
     }
 
-    public function __invoke(createMovieDTO $createMovieDTO)
+    public function __invoke(createMovieDTO $createMovieDTO): Movie
     {
         $Movie = Movie::create(new MovieName($createMovieDTO->name), new MovieYear($createMovieDTO->year),new MovieUrl($createMovieDTO->name), $createMovieDTO->LibraryId);
         $this->movieRepository->save($Movie);
+
+        return $Movie;
     }
 }
