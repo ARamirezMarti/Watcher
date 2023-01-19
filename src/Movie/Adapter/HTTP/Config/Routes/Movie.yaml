@@ -2,3 +2,8 @@ createMovies:
     path:       /create
     controller: App\Movie\Adapter\createMovieController
     methods:    POST
+
+getMovie:
+    path:       /{uuid}
+    controller: App\Movie\Adapter\getMovieController
+    methods:    GET

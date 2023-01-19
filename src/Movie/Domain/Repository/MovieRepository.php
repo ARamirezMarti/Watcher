@@ -34,7 +34,7 @@ class MovieRepository extends DoctrineMovieRepository
         }
     }
 
-    public function findByUuid($uuid)
+    public function findByUuid($uuid): Movie
     {
         $Movie = $this->find($uuid);
         if (is_null($Movie)) {
