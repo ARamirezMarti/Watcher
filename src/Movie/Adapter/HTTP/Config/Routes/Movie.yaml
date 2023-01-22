@@ -7,3 +7,9 @@ getMovie:
     path:       /{uuid}
     controller: App\Movie\Adapter\getMovieController
     methods:    GET
+
+
+getMoviesLibrary:
+    path:       /{uuid}/library
+    controller: App\Movie\Adapter\getMoviesLibraryController
+    methods:    GET

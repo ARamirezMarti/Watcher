@@ -43,4 +43,17 @@ class MovieRepository extends DoctrineMovieRepository
 
         return $Movie;
     }
+    public function findMoviesByLibraryId($uuid): array
+    {
+        $Movies = $this->findBy(['LibraryId'=>$uuid]);
+
+        if(null == $Movies){
+            return null;
+        }
+
+        return $Movies;
+
+
+
+    }
 }

@@ -6,10 +6,11 @@ namespace App\Movie\Domain\Model;
 use App\Movie\Domain\Model\MovieName;
 use App\Movie\Domain\Model\MovieYear;
 use App\Movie\Domain\Model\MovieUrl;
+use JsonSerializable;
 use Ramsey\Uuid\Uuid;
 use App\Library\Domain\Exceptions\InvalidArgumentDomainException;
 
-class Movie
+class Movie implements JsonSerializable
 {
 
     private string $id;
@@ -68,5 +69,15 @@ class Movie
 	 */
 	public function getLibraryId(): string {
 		return $this->LibraryId;
+	}
+
+    	
+	public function jsonSerialize() {
+        return [
+            "id"    => $this->Id(),
+            "name"  => $this->getMovieName()->Value(),
+            "url"   => $this->getMovieUrl()->Value()
+
+        ];
 	}
 }
