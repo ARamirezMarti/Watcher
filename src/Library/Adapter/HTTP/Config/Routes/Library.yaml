@@ -16,4 +16,8 @@ updateLibrary:
     path:       /update
     controller: App\Library\Adapter\updateLibraryController
     methods:    PATCH
-    
+
+getLibraryMovies:
+    path:       /{uuid}/movies
+    controller: App\Library\Adapter\getLibraryMoviesController
+    methods:    GET
