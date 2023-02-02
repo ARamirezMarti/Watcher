@@ -18,6 +18,15 @@ doctrine:
                         dir: '%kernel.project_dir%/src/Movie/Adapter/Database/ORM/Doctrine/Mapping'
                         prefix: 'App\Movie\Domain\Model'
                         alias: Movie
+            MovieMeta:
+                naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+                mappings:
+                    MovieMeta:
+                        is_bundle: false
+                        type: xml
+                        dir: '%kernel.project_dir%/src/Movie/Adapter/Database/ORM/Doctrine/Mapping'
+                        prefix: 'App\Movie\Domain\Model'
+                        alias: MovieMeta
             Library:
                 naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
                 mappings:

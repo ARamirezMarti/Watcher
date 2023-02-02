@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity repository-class="App\Movie\Domain\Repository" name="App\Movie\Domain\Model\MovieMeta" table="movie_meta">
+    
+    <id name="id" type="string" column="id" column-definition="CHAR(36)"></id>
+
+    <field name="imdbid" type="string" column="imdbid" length="50"  nullable="false"></field>
+    <field name="title" type="string" column="title" length="150"  nullable="false"></field>
+    <field name="released" type="string" column="releaded" length="50"  ></field>
+    <field name="description" type="string" column="description" length="500"  ></field>
+    <field name="score" type="integer" column="score"></field>
+
+    <indexes>
+      <index name="INDEX_ID" columns="id"/>
+    </indexes>
+  
+    <one-to-one field="info" target-entity="App\Movie\Domain\Model\Movie" inversed-by="info">
+  </one-to-one>
+
+    
+  </entity>
+  
+</doctrine-mapping>

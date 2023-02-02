@@ -18,6 +18,7 @@ class Movie implements JsonSerializable
     private MovieYear $MovieYear;
     private MovieUrl $MovieUrl;
     private string $LibraryId;
+    private MovieMeta $info;
 
     private function __construct(MovieName $name,  MovieYear $year, MovieUrl $movieUrl, string|null $LibraryId)
     {
@@ -72,7 +73,7 @@ class Movie implements JsonSerializable
 	}
 
     	
-	public function jsonSerialize() {
+	public function jsonSerialize(): mixed {
         return [
             "id"    => $this->Id(),
             "name"  => $this->getMovieName()->Value(),
