@@ -3,9 +3,6 @@
 namespace App\Library\Domain\Model;
 
 use App\Library\Application\UpdateLibrary\DTO\updateLibraryInputDTO;
-use App\Movie\Domain\Model\Movie;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Ramsey\Uuid\Uuid;
 
 class Library

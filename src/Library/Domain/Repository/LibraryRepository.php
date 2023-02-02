@@ -5,7 +5,6 @@ namespace App\Library\Domain\Repository;
 use App\Library\Adapter\Database\ORM\Doctrine\Repository\DoctrineLibraryRepository;
 use App\Library\Domain\Exceptions\InvalidArgumentDomainException;
 use App\Library\Domain\Model\Library;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @extends ServiceEntityRepository<Library>
