@@ -1,0 +1,18 @@
+services:
+    _defaults:
+      autowire: true
+      autoconfigure: true            
+    
+    App\User\Adapter\:
+        resource: '../../src/User/Adapter'
+        tags: [ 'controller.service_arguments' ]
+
+    App\User\Application\:
+        resource: '../../src/User/Application/'
+
+    App\User\Domain\:
+        resource: '../../src/User/Domain/'
+
+    App\User\Adapter\Command:
+        class: App\User\Adapter\Command\userCreateCommand
+        tags: ['console.command']

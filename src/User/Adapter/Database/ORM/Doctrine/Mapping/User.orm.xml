@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity repository-class="App\User\Domain\Repository" name="App\User\Domain\Entity\User" table="User">
+    
+    <id name="id" type="string" column="id" column-definition="CHAR(36)"></id>
+    
+    <field name="email" type="string" unique="true" lenght="255" column="email" />
+    <field name="password" type="string"  length="255" column="password"/>
+
+  
+    <indexes>
+      <index name="INDEX_ID" columns="id"/>
+    </indexes>
+  
+
+  </entity>
+  
+</doctrine-mapping>
