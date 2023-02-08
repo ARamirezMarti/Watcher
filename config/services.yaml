@@ -8,6 +8,7 @@ imports:
     - { resource: './services/library.yaml' }
     - { resource: './services/shared.yaml' }
     - { resource: './services/movie.yaml' }
+    - { resource: './services/user.yaml' }
 parameters:
 
 services:
@@ -20,3 +21,4 @@ services:
     App\Shared\Infrastructure\Listener\JsonTransformerExceptionListener:
         tags:
             - { name: kernel.event_listener, event: kernel.exception }
+ 
