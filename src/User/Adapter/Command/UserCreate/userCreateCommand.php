@@ -1,6 +1,6 @@
 <?php
 
-namespace App\User\Adapter\Command;
+namespace App\User\Adapter\Command\UserCreate;
 
 use App\User\Application\UserCreator;
 use Symfony\Component\Console\Command\Command;

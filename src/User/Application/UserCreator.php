@@ -3,11 +3,11 @@
 namespace App\User\Application;
 use App\User\Domain\Entity\User;
 use App\User\Domain\Repository\UserRepository;
-use App\User\Adapter\Security\PasswordHasher;
+use App\User\Domain\Security\PasswordHasherInterface;
 
 class UserCreator
 {
-    public function __construct(public UserRepository $UserRepository,public PasswordHasher $passwordHasher){
+    public function __construct(public UserRepository $UserRepository,public PasswordHasherInterface $passwordHasher){
 
     }
 

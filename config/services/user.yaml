@@ -13,6 +13,10 @@ services:
     App\User\Domain\:
         resource: '../../src/User/Domain/'
 
-    App\User\Adapter\Command:
-        class: App\User\Adapter\Command\userCreateCommand
+    App\User\Adapter\Command\UserCreate:
+        class: App\User\Adapter\Command\UserCreate\userCreateCommand
+        tags: ['console.command']
+    
+    App\User\Adapter\Command\UserDelete:
+        class: App\User\Adapter\Command\UserDelete\userDeleteCommand
         tags: ['console.command']

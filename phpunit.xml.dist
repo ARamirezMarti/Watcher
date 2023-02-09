@@ -31,6 +31,10 @@
             <directory>tests/Movie/Application</directory>
         </testsuite>
        
+
+        <testsuite name="User Unit">
+            <directory>tests/User/Application</directory>
+        </testsuite>
     </testsuites>
 
     <coverage processUncoveredFiles="true">
