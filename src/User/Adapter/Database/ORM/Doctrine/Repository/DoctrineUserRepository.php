@@ -3,6 +3,7 @@
 namespace App\User\Adapter\Database\ORM\Doctrine\Repository;
 
 use App\User\Domain\Exception\DatabaseException;
+use App\User\Domain\Exception\UserNotFound;
 use App\User\Domain\Repository\UserRepository;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -49,7 +50,20 @@ class DoctrineUserRepository extends ServiceEntityRepository implements UserRepo
 
         $user->setPassword($newHashedPassword);
 
-        $this->save($user, true);
+        $this->save($user);
+    }
+    
+    /**
+     * @param string $Email
+     * @return User
+     */
+    public function findByEmailOrFail(string $Email): User {
+        $User = $this->findOneBy(['email' => $Email]);
+
+        if(null==$User){
+            throw new UserNotFound(sprintf("User with email %s not found.",$Email) );
+        }
+        return $User;
     }
 
 //    /**
@@ -76,5 +90,4 @@ class DoctrineUserRepository extends ServiceEntityRepository implements UserRepo
 //            ->getOneOrNullResult()
 //        ;
 //    }
-	
 }

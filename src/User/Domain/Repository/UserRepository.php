@@ -21,6 +21,8 @@ interface UserRepository
     public function save(User $entity): void;
 
     public function remove(User $entity): void;
+    
+    public function findByEmailOrFail(string $Email): User;
 
 
     public function upgradePassword(PasswordAuthenticatedUserInterface $user, string $newHashedPassword): void;
