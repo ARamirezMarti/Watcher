@@ -2,8 +2,7 @@
 
 namespace App\Library\Domain\Events\CreateLibraryEvent;
 
-use App\Library\Domain\Model\Library;
-use App\Shared\Infrastructure\Event\DomainEvent;
+use App\Shared\Domain\Bus\Event\DomainEvent;
 
 class CreateLibraryEvent extends DomainEvent
 {
@@ -12,14 +11,13 @@ class CreateLibraryEvent extends DomainEvent
 
     public function __construct($name,$uuid)
     {
-        parent::__construct($name,$uuid);
         $this->Uuid = $uuid;
         $this->name = $name;
     }
 
-    public static function create(string $name,Library $Library): self
+    public static function create(string $name,  $Library): self
     {
-        return new static($name,$Library->getId());
+        return new self($name,$Library->getId());
     }
 
     
