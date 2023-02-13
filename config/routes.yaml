@@ -5,6 +5,11 @@ movie:
     resource: '../src/Movie/Adapter/HTTP/Config/Routes/Movie.yaml'
     prefix: "movie"
 
+api_login_check:
+  path: /api/login_check
+  methods: [POST]
+
+
 health_check:
     path:       /healtcheck
     controller: App\createMovieController

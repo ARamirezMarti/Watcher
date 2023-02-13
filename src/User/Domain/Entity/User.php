@@ -45,6 +45,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 	}
 	
 	public function getRoles(): array {
+        return [];
 	}
 	
 	public function getSalt(){
@@ -56,7 +57,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 	
 	
 	public function getUsername(): string {
+        return $this->email;
 	}
 
-	public function getUserIdentifier():string{}
+	public function getUserIdentifier():string{
+        return $this->id;
+    }
 }
