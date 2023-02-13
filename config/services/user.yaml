@@ -10,6 +10,9 @@ services:
     App\User\Application\:
         resource: '../../src/User/Application/'
 
+    App\User\Adapter\Database\ORM\Doctrine\Repository:
+        tags: ['doctrine.repository_service']
+
     App\User\Domain\:
         resource: '../../src/User/Domain/'
 
@@ -20,3 +23,8 @@ services:
     App\User\Adapter\Command\UserDelete:
         class: App\User\Adapter\Command\UserDelete\userDeleteCommand
         tags: ['console.command']
+
+    App\User\Adapter\Security\JWT:
+        class: App\User\Adapter\Security\JWT\onCreatedUserAuthentication
+        tags:
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_authentication_success, method: onAuthenticationSuccessResponse }
