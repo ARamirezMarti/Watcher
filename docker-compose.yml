@@ -18,7 +18,7 @@ services:
       XDEBUG_CLIENT_PORT: 9000
       PHP_IDE_CONFIG: serverName=application
     ports:
-      - '1000:8000' 
+      - '2500:8000' 
     networks:
       - application-network
 
@@ -51,6 +51,14 @@ services:
       - application-network
     ports:
       - 8080:8080
+  mailer:
+    container_name: mailer
+    image: schickling/mailcatcher
+    ports: 
+      - '1025:1025'
+      - '1080:1080'
+    networks:
+      - application-network
 
 networks:
   application-network:
